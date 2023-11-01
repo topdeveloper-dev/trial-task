@@ -2,9 +2,10 @@ async function routes(fastify, options) {
   // Handle POST request Add Data
 
   fastify.post('/create', (request, reply) => {
+    console.log(request.body);
     const data = {
-      lat: request.body.latitude,
-      lng: request.body.longitude,
+      lat: request.body.dmslatitude,
+      lng: request.body.dmslongitude,
       notes: `DMS Latitude: ${request.body.dmslatitude}, DMS Longitude: ${request.body.dmslongitude}`,
     };
 
